@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Account Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #verification-form {
+      text-align: center;
+    }
+
+    #verification-code-input {
+      display: none;
+    }
+
+    .digit-input {
+      width: 2em;
+      text-align: center;
+      margin: 0 0.2em;
+    }
+  </style>
+</head>
+<body>
+  <div id="verification-form">
+    <h2>Account Verification</h2>
+    <p>Enter your email to receive a 6-digit verification code.</p>
+    <form id="email-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <button type="button" onclick="sendVerificationCode()">Send Code</button>
+    </form>
+
+    <form id="verification-code-form" style="display: none;">
+      <label for="verification-code">Verification Code:</label>
+      <div id="verification-code-input">
+        <input class="digit-input" type="text" maxlength="1" readonly>
+        <input class="digit-input" type="text" maxlength="1" readonly>
+        <input class="digit-input" type="text" maxlength="1" readonly>
+        <input class="digit-input" type="text" maxlength="1" readonly>
+        <input class="digit-input" type="text" maxlength="1" readonly>
+        <input class="digit-input" type="text" maxlength="1" readonly>
+      </div>
+      <button type="button" onclick="verifyCode()">Verify Code</button>
+    </form>
+  </div>
+
+  <script>
+    function sendVerificationCode() {
+      var verificationCode = Math.floor(100000 + Math.random() * 900000);
+      var codeInput = document.getElementById('verification-code-input');
+      for (var i = 0; i < 6; i++) {
+        codeInput.children[i].value = verificationCode.toString()[i];
+      }
+      document.getElementById('email-form').style.display = 'none';
+      document.getElementById('verification-code-form').style.display = 'block';
+    }
+
+    function verifyCode() {
+      alert('Verification successful!');
+      document.getElementById('email-form').reset();
+      document.getElementById('email-form').style.display = 'block';
+      document.getElementById('verification-code-form').style.display = 'none';
+      var codeInput = document.getElementById('verification-code-input');
+      for (var i = 0; i < 6; i++) {
+        codeInput.children[i].value = '';
+      }
+    }
+  </script>
+</body>
+</html>

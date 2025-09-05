@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light Switch with Bulb</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .light-container {
+      position: relative;
+    }
+
+    .bulb {
+      width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+      transition: opacity 0.3s ease;
+    }
+
+    .switch-btn {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="light-container">
+    <img src="bulp.png" alt="Bulb" class="bulb" id="bulb">
+    <button class="switch-btn" onclick="toggleLight()">Toggle Light</button>
+  </div>
+
+  <script>
+    function toggleLight() {
+      const bulb = document.getElementById('bulb');
+      const isLightOn = bulb.getAttribute('src') === 'bulp.png';
+
+      if (isLightOn) {
+        // Turn off the light
+        bulb.setAttribute('src', 'bulp.png');
+      } else {
+        // Turn on the light
+        bulb.setAttribute('src', 'earth.png<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .counter-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .counter {
+      font-size: 36px;
+      margin: 0 10px;
+    }
+
+    .button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter-container">
+    <button class="button" onclick="decreaseCounter()">-</button>
+    <div class="counter" id="counter">0</div>
+    <button class="button" onclick="increaseCounter()">+</button>
+  </div>
+
+  <script>
+    let counterValue = 0;
+
+    function updateCounter() {
+      const counterElement = document.getElementById('counter');
+      counterElement.textContent = counterValue;
+    }
+
+    function increaseCounter() {
+      counterValue++;
+      updateCounter();
+    }
+
+    function decreaseCounter() {
+      if (counterValue > 0) {
+        counterValue--;
+        updateCounter();
+      }
+    }
+  </script>
+</body>
+</html>
+');
+      }
+    }
+  </script>
+</body>
+</html>

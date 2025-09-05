@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+<title>Box Animation</title>
+<style>
+body {
+margin: 0;
+overflow: hidden;
+}
+.expanding-box {
+width: 10px;
+height: 10px;
+background-color: #0e1acc;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+transition: all .9s;
+}
+
+.expanding-box:hover {
+width: 100px;
+height: 100px;
+top: 50%;
+left: 50%;
+box-shadow: 0 0 15px rgb(4, 4, 4);
+transform: translate(-50%, -50%) scale(2);
+}
+.expanding-box:hover::before {
+content: " Subscribe!";
+color: #0acb0d;
+padding:20px;
+font-size: 24px;
+border-radius: 10px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+  </style>
+</head>
+<body>
+  <div class="expanding-box"></div>
+</body>
+</html>

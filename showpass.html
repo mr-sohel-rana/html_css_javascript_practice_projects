@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Show Password</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: white;
+    }
+
+    .password-container {
+      position: relative;
+      background-color: black;
+      border-radius: 15px;
+      padding: 5px;
+    }
+
+    #password {
+      padding-right: 30px;
+      color: rgb(209, 14, 216);
+    }
+
+    #toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="password-container">
+    <input type="password" id="password" placeholder="Enter your password">
+    <span id="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+  </div>
+
+  <script>
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('password');
+      var toggleButton = document.getElementById('toggle-password');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleButton.textContent = '👁️';  
+      } else {
+        passwordInput.type = 'password';
+        toggleButton.textContent = '👁️';  
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+  <title>Notification Badge</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .notification-badge {
+      position: relative;
+      display: inline-block;
+    }
+
+    .notification-icon {
+      width: 60px;
+      height: 60px;
+      background-color: #3498db;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #e74c3c;
+      color: #fff;
+      font-size: 10px;
+      padding: 5px 8px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="notification-badge">
+    <div class="notification-icon">🔔</div>
+    <div class="badge">3</div>
+  </div>
+</body>
+</html>

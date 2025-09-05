@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+  <title>Revolving Earth</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+    }
+
+    .earth {
+      width: 200px;
+      height: 200px;
+      background: url( "earth.png") center/cover;
+      border-radius: 50%;
+      animation: rotate 10s linear infinite;
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="earth"></div>
+</body>
+</html>

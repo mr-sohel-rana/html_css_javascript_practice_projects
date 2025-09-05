@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burning Flame</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .flame {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle, #ffeb3b, #ff9800, #e64a19, #ff5722);
+      border-radius: 50%;
+      animation: flicker 1s infinite alternate, flame-rise 2s infinite linear;
+    }
+
+    @keyframes flicker {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes flame-rise {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Dynamically create and append flame elements to the body
+    for (let i = 0; i < 100; i++) {
+      createFlame();
+    }
+
+    function createFlame() {
+      const flame = document.createElement('div');
+      flame.classList.add('flame');
+      flame.style.left = Math.random() * window.innerWidth + 'px';
+      flame.style.bottom = Math.random() * window.innerHeight * 0.5 + 'px';
+      document.body.appendChild(flame);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Bar</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .loading-bar-container {
+      width: 300px;
+      height: 20px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .loading-bar {
+      height: 100%;
+      width: 0;
+      background-color: #3498db;
+      transition: width 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-bar-container">
+    <div class="loading-bar" id="loadingBar"></div>
+  </div>
+
+  <script>
+    function startLoading() {
+      const loadingBar = document.getElementById('loadingBar');
+      let width = 0;
+
+      function updateLoadingBar() {
+        if (width <= 100) {
+          loadingBar.style.width = `${width}%`;
+          width += 1;
+          requestAnimationFrame(updateLoadingBar);
+        }
+      }
+
+      updateLoadingBar();
+    }
+
+    // Call startLoading() when you want to start the loading process.
+    // For example, you might call it when the page loads or in response to user actions.
+    // Uncomment the line below to see the loading bar in action.
+    // startLoading();
+  </script>
+</body>
+</html>

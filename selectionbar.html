@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Select</title>
+  <style>
+body{
+    background-color: rgb(31, 30, 30);
+}
+    select {margin-left: 350px;
+        margin-top: 150px;
+      padding: 20px;
+      font-size: 16px;
+      border: 5px solid #e7f704;
+      border-radius: 5px;
+      appearance: none;  
+    }
+
+     
+    option {
+      background-color:black;
+      padding: 10px;
+      color: white;
+    }
+
+     
+    select:focus {
+      outline: none;
+      border-color: #eaf10b;
+      box-shadow: 0 0 5px rgba(5, 239, 227, 0.7);
+    }
+  </style>
+</head>
+<body>
+
+<select id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
+</select>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pagination</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: black;
+    }
+
+    .pagination {
+        padding: 5px;
+      display: flex;
+      list-style: none;
+      font-family: Arial, sans-serif;
+      background-color: rgb(89, 86, 86);
+      box-shadow: 0 0 15px rgb(245, 243, 243);
+    }
+
+    .page-item {
+        padding: 0px;
+      margin: 0 5px;
+      box-shadow: 0 0 15px rgb(40, 39, 39);
+    }
+
+    .page-link, .prev-next-link {
+      display: block;
+      padding: 8px 12px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .page-link:hover, .prev-next-link:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <ul class="pagination">
+    <li class="page-item"><a href="#" class="prev-next-link">Previous</a></li>
+    <li class="page-item"><a href="#" class="page-link">1</a></li>
+    <li class="page-item"><a href="#" class="page-link">2</a></li>
+    <li class="page-item"><a href="#" class="page-link">3</a></li>
+    <li class="page-item"><a href="#" class="page-link">4</a></li>
+    <li class="page-item"><a href="#" class="page-link">5</a></li>
+    <li class="page-item"><a href="#" class="prev-next-link">Next</a></li>
+  </ul>
+</body>
+</html>

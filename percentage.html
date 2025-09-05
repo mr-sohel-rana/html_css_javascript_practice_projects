@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percentage Finder</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .percentage-finder {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 2px;
+      font-size: 16px;
+      margin-bottom:5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .result {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="percentage-finder">
+   
+  <input type="number" id="value" placeholder="Enter a value">
+  <input type="number" id="percentage" placeholder="Enter percentage"><br>
+  <button onclick="calculatePercentage()">Find Percentage</button>
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  function calculatePercentage() {
+    const valueInput = document.getElementById('value');
+    const percentageInput = document.getElementById('percentage');
+    const resultElement = document.getElementById('result');
+
+    const value = parseFloat(valueInput.value);
+    const percentage = parseFloat(percentageInput.value);
+
+    if (!isNaN(value) && !isNaN(percentage)) {
+      const calculatedPercentage = (value * percentage) / 100;
+      resultElement.textContent = `Result: ${calculatedPercentage.toFixed(2)}`;
+    } else {
+      resultElement.textContent = 'Please enter valid numbers.';
+    }
+  }
+</script>
+
+</body>
+</html>

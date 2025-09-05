@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+  <title>Continuous Traffic Light</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .traffic-light {
+        background-color: #1a1919;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 0 15px rgb(4, 4, 4);
+    }
+
+    .light {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: 10px;
+      background-color: #ccc;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .off {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="traffic-light">
+    <div class="light red"></div>
+    <div class="light yellow"></div>
+    <div class="light green"></div>
+  </div>
+
+  <script>
+    const lights = document.querySelectorAll('.light');
+    let activeIndex = 0;
+
+    function toggleLights() {
+      lights.forEach((light, index) => {
+        if (index === activeIndex) {
+          light.classList.remove('off');
+        } else {
+          light.classList.add('off');
+        }
+      });
+
+      // Move to the next light
+      activeIndex = (activeIndex + 1) % lights.length;
+    }
+
+    setInterval(toggleLights, 1000);  
+  </script>
+</body>
+</html>

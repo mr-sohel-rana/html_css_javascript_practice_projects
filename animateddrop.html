@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Animated Drop-down Menu</title>
+<style>
+body, ul, li {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+ul {
+display: flex;
+justify-content: space-around;
+padding-top: 100px;
+}
+li {
+position: relative;
+}
+.dropdown li:hover{
+border-bottom: 2px solid black;
+transition: .2s;
+display: inline-block;
+}
+.dropdown {
+display: none;
+position: absolute;
+top:15px;
+right: 0;
+width: 150px;
+padding: 10px;
+}
+li:hover .dropdown {
+display: block;
+animation: fadeIn 0.4s ease-in-out forwards;
+}
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateX(10px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+a {
+color: #060202;
+text-decoration: none;
+color: blue;
+font-size: 25px;
+font-weight: 500;
+}
+.dropdown li {
+margin: 5px 0;
+opacity: 0;
+transform: translateY(-30px);
+animation: fadeIn 0.5s ease-in-out forwards;
+}
+.dropdown li:nth-child(1) {
+animation-delay: 0.1s;
+ }
+.dropdown li:nth-child(2) {
+animation-delay: 0.2s;
+}
+.dropdown li:nth-child(3) {
+animation-delay: 0.3s;
+}
+</style>
+</head>
+<body>
+<nav>
+<ul>
+<li>
+<a href="#">Services</a>
+        <ul class="dropdown">
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Graphics</a></li>
+          <li><a href="#">SEO</a></li>
+        </ul>
+      </li>    
+  </nav>
+</body>
+</html>
